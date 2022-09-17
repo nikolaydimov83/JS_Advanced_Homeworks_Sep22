@@ -59,16 +59,13 @@ function spiralMatrix(width,heigth){
 return currentNumber
     }
         
-   console.log(matrix[0]);
-   console.log(matrix[1]); 
-   console.log(matrix[2]); 
-   console.log(matrix[3]); 
-   console.log(matrix[4]);
-   console.log(matrix[5]);
-   console.log(matrix[6]);
-   console.log(matrix[7]);
-   console.log(matrix[8]);
-   console.log(matrix[9]);
+for (const row of matrix) {
+let string='';
+for (const number of row) {
+    string+=number+' '
+}
+console.log(string.trim())
+}
    
 }
 spiralMatrix(10,10)
