@@ -22,3 +22,11 @@ describe('when start index is less than 0',()=>{
     })
 })
 
+describe('when endIndex is greater than array.length-1',()=>{
+    it('should be considered 0',()=>{
+        let array=[1,2,3,4,5];
+        let a=arraySum(array,0,50)
+        assert.equal(a,15);
+    })
+})
+
