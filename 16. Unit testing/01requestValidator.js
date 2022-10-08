@@ -12,15 +12,15 @@ function solve(object){
     if (!object.hasOwnProperty('method')||validMethods.indexOf(object.method)===-1){
         throw new Error('Invalid request header: Invalid Method');
     }
-    if(!uriIsAlphaNumeric){
+    if(!object.hasOwnProperty('uri')||!uriIsAlphaNumeric){
         throw new Error('Invalid request header: Invalid URI');
     }
-    if (validProtocols.indexOf(object.version)===-1){
+    if (!object.hasOwnProperty('version')||validProtocols.indexOf(object.version)===-1){
         throw new Error('Invalid request header: Invalid Version');
     }
 
     invalidMessageChars.forEach((character)=>{
-        if (object.message.includes(character)){
+        if (!object.hasOwnProperty('message')||object.message.includes(character)){
             throw new Error('Invalid request header: Invalid Message');
         }
     })
@@ -28,7 +28,7 @@ function solve(object){
 
 }
 let object={
-    
+    method:'POST',
     uri:'www.abv.bg',
     version:'HTTP/0.9' ,
     message:'Hello!' 

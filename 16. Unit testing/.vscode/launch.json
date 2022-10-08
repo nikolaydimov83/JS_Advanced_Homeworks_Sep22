@@ -31,7 +31,7 @@
             "skipFiles": [
                 "<node_internals>/**"
             ],
-            "program": "${workspaceFolder}\\01requestValidator.js"
+            "program": "${workspaceFolder}\\03charAtIndex.js"
         }
     ]
 }
