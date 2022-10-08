@@ -31,7 +31,7 @@
             "skipFiles": [
                 "<node_internals>/**"
             ],
-            "program": "${workspaceFolder}\\03charAtIndex.js"
+            "program": "${workspaceFolder}\\"
         }
     ]
 }
