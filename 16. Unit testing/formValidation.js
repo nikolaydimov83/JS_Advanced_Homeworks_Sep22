@@ -3,8 +3,7 @@ function validate() {
         userName:false,
         email:false,
         password:false,
-        repass:false,
-        passMatch:false,
+        repass:false
         
     }
     let companyCheckBox=document.getElementById('company');
@@ -31,47 +30,36 @@ function validate() {
                 validations['userName']=false;
         
         }else{
-            userName.style.border='none';
+            //userName.style.border='none';
             validations['userName']=true;
         }
 
         let password=document.getElementById('password');
-        let passwordRegex=/^[a-zA-Z0-9_]+$/;
+        let passwordRegex=/^[\w]+$/;
+        let repeatPass=document.getElementById('confirm-password');
         if (password.value.length<5||
             password.value.length>20||
-            !password.value.match(passwordRegex)){
+            !password.value.match(passwordRegex)||
+            (password.value!==repeatPass.value)){
                 password.style['borderColor']='red';
                 validations['password']=false;
-        }else{
-            password.style.border='none';
-            validations['password']=true;
-        }
-         let repeatPass=document.getElementById('confirm-password');
-         if (repeatPass.value.length<5||
-            repeatPass.value.length>20||
-            !repeatPass.value.match(passwordRegex)){
                 repeatPass.style['borderColor']='red';
                 validations['repass']=false
         }else{
-            repeatPass.style.border='none';
+            //password.style.border='none';
+            validations['password']=true;
+            //repeatPass.style.border='none';
             validations['repass']=true
         }
-        if (repeatPass.value!==password.value){
-            repeatPass.style['borderColor']='red';
-            password.style['borderColor']='red';
-            validations['passMatch']=false;
-        }else{
-            validations['passMatch']=true;
-            repeatPass.style.border='none';
-            password.style.border='none';
-        }
+         
+         
         let email=document.getElementById('email');
         let emailRegex=/^[\s\S]*[@]{1}[\s\S]*[.]+[\s\S]*$/;
         if (!email.value.match(emailRegex)){
             email.style['borderColor']='red';
             validations['email']=false;
         }else{
-            email.style.border='none';
+            //email.style.border='none';
             validations['email']=true;
         }
         if (validations.hasOwnProperty('company')){
@@ -82,7 +70,7 @@ function validate() {
                 companyNumber.style['borderColor']='red'
                 validations['company']=false
             }else{
-                companyNumber.style.border='none';
+                //companyNumber.style.border='none';
                 validations['company']=true;
             }
         }
@@ -99,5 +87,4 @@ function validate() {
             finalResult.style.display='none';
         }
     });
-    
 }

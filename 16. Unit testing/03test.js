@@ -7,7 +7,7 @@ describe('string input is not a string',()=>{
         let index=0;
         assert.isUndefined(lookupChar(string,index),true)
     })
-})
+});
 
 describe('index input is not an integer',()=>{
     it('should return undefined',()=>{
@@ -22,7 +22,7 @@ describe('index input is not an integer',()=>{
         assert.isUndefined(lookupChar(string,index2),true);
 
     })
-})
+});
 
 describe('index input ',()=>{
     it('should be greater than 0 and less than string.length',()=>{
@@ -34,4 +34,16 @@ describe('index input ',()=>{
         assert.equal(lookupChar(string,index3),'Incorrect index');
 
     })
-})
+});
+
+describe('lookUpChar with valid input for string and index',()=>{
+    it('should return char at predifened index',()=>{
+        let index=0;
+        let string='abcd';
+        assert.equal(lookupChar(string,index),'a');
+
+        let index3=1;
+        assert.equal(lookupChar(string,index3),'b');
+
+    })
+});
