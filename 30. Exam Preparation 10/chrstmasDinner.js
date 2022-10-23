@@ -1,5 +1,7 @@
 let b=new ChristmasDinner(1000)
+Object.create()
 class ChristmasDinner{
+    
     constructor(budget){
         if(budget<0){
             throw new Error("The budget cannot be a negative number")
